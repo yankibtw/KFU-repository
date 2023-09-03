@@ -95,14 +95,14 @@ namespace MainProject
             Console.WriteLine($"Результат выполнения программы: {short.Parse(newStringValue)}\n");
         }
         static void BasketPrice() {
-            uint candiesPrice = 56,
+            double candiesPrice = 56,
                  cookiesPrice = 76,
                  applesPrice = 92;
             Console.WriteLine("Задание №8:\nСколько килограмм конфет, печенья и яблок Вы бы хотели приобрести?\n" +
                 $"Цена за килограмм: Конфеты - {candiesPrice}, Печенье - {cookiesPrice}, Яблоки - {applesPrice}");
-            uint candiesWeight = uint.Parse(Console.ReadLine()),
-                 cookiesWeight = uint.Parse(Console.ReadLine()),
-                 applesWeight = uint.Parse(Console.ReadLine());
+            double candiesWeight = double.Parse(Console.ReadLine()),
+                 cookiesWeight = double.Parse(Console.ReadLine()),
+                 applesWeight = double.Parse(Console.ReadLine());
             Console.WriteLine("Итоговая сумма корзины будет составлять: " +
                 $"{(candiesPrice * candiesWeight) + (cookiesPrice * cookiesWeight) + (applesPrice * applesWeight)}");
         }
