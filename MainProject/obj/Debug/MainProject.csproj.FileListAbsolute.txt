@@ -1,0 +1,8 @@
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\bin\Debug\MainProject.exe.config
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\bin\Debug\MainProject.exe
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\bin\Debug\MainProject.pdb
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\obj\Debug\MainProject.csproj.AssemblyReference.cache
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\obj\Debug\MainProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\obj\Debug\MainProject.exe
+C:\Users\ganie\source\repos\yankibtw\MainProject\MainProject\obj\Debug\MainProject.pdb
