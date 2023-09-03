@@ -61,18 +61,17 @@ namespace MainProject
                    c = double.Parse(Console.ReadLine());
 
             string ExA(double first, double second, double third){
-                double BufferForB = second,
-                       BufferForA = first;
+                double BufferForB = second;
                 second = third;
+                third = first;
                 first = BufferForB;
-                third = BufferForA;
+                
                 return ($"{first}, {second}, {third}");
             }
             string ExB(double first, double second, double third) {
-                double BufferForB = second,
-                       BufferForC = third;
+                double BufferForB = second;
                 second = first;
-                first = BufferForC;
+                first = third;
                 third = BufferForB;
                 return ($"{first}, {second}, {third}");
             }
