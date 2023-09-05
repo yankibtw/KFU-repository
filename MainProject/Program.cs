@@ -8,36 +8,35 @@ namespace MainProject
 {
     internal class Program
     {
-        static void PrintOnConsole(){
+        static void PrintOnConsole() {
             Console.WriteLine("Задание №1:\nМир Труд Май");
             Console.WriteLine("Мир\n\tТруд\n\t\tМай\n");
         }
         static void TwoNumbers() {
             Console.WriteLine("Задание №2:\nВведите 2 числа(каждое с новой строки)(Примечание: Дробные числа важно вводить по образцу: 2,3):");
-            string FirstNumber = Console.ReadLine(),
-                   SecondNumber = Console.ReadLine();
-            try {
-                double FirstNumberInDouble = Double.Parse(FirstNumber);
-                double SecondNumberInDouble = Double.Parse(SecondNumber);
-            }
-            catch (System.FormatException) { Console.WriteLine("Введите числа корректно!!!\n");
-            }
-            finally { Console.WriteLine($"Ваши числа в обратном порядке: {SecondNumber} {FirstNumber} \n");
+            string firstNumber = Console.ReadLine(),
+                   secondNumber = Console.ReadLine();
+            double firstValue, secondValue, bufferValue;
+
+            if (!double.TryParse(firstNumber, out firstValue) || (!double.TryParse(secondNumber, out secondValue)))  {
+                Console.WriteLine("Пожалуйста, введите корректные данные!!!");
+            }else { 
+                bufferValue = firstValue;
+                firstValue = secondValue;
+                secondValue = bufferValue;
+                Console.WriteLine($"Ваши числа в обратном порядке: {firstValue} {secondValue}\n");
             }
         }
         static void RadiusSearch() {
-            Console.WriteLine("Задание №3:");
-            // Console.WriteLine("Введите радиус окружности:");
-            // uint CircleRadius = uint.Parse(Console.ReadLine());
-            uint СircleRadius = 5;
-            Console.WriteLine($"Длина окружности с радиусом {СircleRadius} равна - {2 * Math.PI * СircleRadius}");
-            Console.WriteLine($"Площадь круга с радиусом {СircleRadius} равна - {Math.PI * Math.Pow(СircleRadius, 2)}\n");  
+            Console.WriteLine("Задание №3:\nВведите радиус окружности:");
+            double circleRadius = uint.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Длина окружности с радиусом {circleRadius} равна - {2 * Math.PI * circleRadius}");
+            Console.WriteLine($"Площадь круга с радиусом {circleRadius} равна - {Math.PI * Math.Pow(circleRadius, 2)}\n");  
         }
         static void SinusSearch() {
-            Console.WriteLine("Задание №4:");
-            // Console.WriteLine("Введите значение X, синус которого нужно найти:");
-            // int CircleRadius = int.Parse(Console.ReadLine());
-            int x = 6;
+            Console.WriteLine("Задание №4:\nВведите значение X, синус которого нужно найти:");
+            double x = int.Parse(Console.ReadLine());
             Console.WriteLine($"Синус числа {x} равен: {Math.Sin(x)}\n");
         }
         static void Roots() {
@@ -55,24 +54,24 @@ namespace MainProject
             }
         }
         static void Exchange() {
-            Console.WriteLine("Задание №6:\nВведите числовые значения(Каждое с новой строки):");
+            Console.WriteLine("Задание №6:\nВведите числовые значения c которыми нужно проделать операции обмена(Каждое с новой строки):");
             double a = double.Parse(Console.ReadLine()),
                    b = double.Parse(Console.ReadLine()),
                    c = double.Parse(Console.ReadLine());
 
             string ExA(double first, double second, double third){
-                double BufferForB = second;
+                double bufferForB = second;
                 second = third;
                 third = first;
-                first = BufferForB;
+                first = bufferForB;
                 
                 return ($"{first}, {second}, {third}");
             }
             string ExB(double first, double second, double third) {
-                double BufferForB = second;
+                double bufferForB = second;
                 second = first;
                 first = third;
-                third = BufferForB;
+                third = bufferForB;
                 return ($"{first}, {second}, {third}");
             }
             Console.WriteLine($"Результат обмена значениями под пунктом A: {ExA(a, b, c)}");
