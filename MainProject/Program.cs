@@ -88,9 +88,15 @@ namespace MainProject
         }
         static void ChangeValue() {
             Console.WriteLine("Задание №8:\nВведите трехзначное число, которое Вы бы хотели изменить:");
-            uint valueToReverse = uint.Parse(Console.ReadLine());
-            uint newValue = ((valueToReverse % 10) * 100) + (valueToReverse / 10);
-            Console.WriteLine($"Результат выполнения программы: {newValue}\n");
+            string value = Console.ReadLine();
+            if (value.Length != 3) {
+                Console.WriteLine("Введите трехзначное число!!!\n");
+            }
+            else {
+                uint valueToReverse = uint.Parse(value);
+                uint newValue = ((valueToReverse % 10) * 100) + (valueToReverse / 10);
+                Console.WriteLine($"Результат выполнения программы: {newValue}\n");
+            }
         }
         static void BasketPrice() {
             Console.WriteLine("Задание №9:\nВведите цену Конфет, Печенья, Яблок за килограмм(Каждое значение с новой строки!): ");
