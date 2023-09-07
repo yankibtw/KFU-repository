@@ -29,21 +29,21 @@ namespace MainProject
         }
         static void RadiusSearch() {
             Console.WriteLine("Задание №3:\nВведите радиус окружности:");
-            double circleRadius = uint.Parse(Console.ReadLine());
+            double circleRadius = double.Parse(Console.ReadLine());
 
             Console.WriteLine($"Длина окружности с радиусом {circleRadius} равна - {2 * Math.PI * circleRadius}");
             Console.WriteLine($"Площадь круга с радиусом {circleRadius} равна - {Math.PI * Math.Pow(circleRadius, 2)}\n");  
         }
         static void SinusSearch() {
-            Console.WriteLine("Задание №4:\nВведите значение X, синус которого нужно найти:");
-            double x = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Синус числа {x} равен: {Math.Sin(x)}\n");
+            Console.WriteLine("Задание №4:\nВведите значение угла X, синус которого нужно найти:");
+            double x = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Синус угла {x} равен: {Math.Sin(Math.PI * x / 180.0)}\n");
         }
         static void Roots() {
             Console.WriteLine("Задание №5:\nВведите коэффициенты квадратного уравнения(Каждое с новой строки):");
-            double a = int.Parse(Console.ReadLine()), 
-                   b = int.Parse(Console.ReadLine()), 
-                   c = int.Parse(Console.ReadLine());
+            double a = double.Parse(Console.ReadLine()), 
+                   b = double.Parse(Console.ReadLine()), 
+                   c = double.Parse(Console.ReadLine());
             double discriminant = (Math.Pow(b, 2) - 4 * a * c);
             if (discriminant < 0) {
                 Console.WriteLine("Квадратное уравнение с данными коэффициентами корней не имеет!\n");
@@ -87,21 +87,20 @@ namespace MainProject
                 $"{random.Next()}\n");
         }
         static void ChangeValue() {
-            short value = 235;
-            Console.WriteLine($"Задание №8:\nИсходное число: {value}");
-            string valueToString = value.ToString();
-            string newStringValue = valueToString[2] + "" + valueToString[0] + "" + valueToString[1];
-            Console.WriteLine($"Результат выполнения программы: {short.Parse(newStringValue)}\n");
+            Console.WriteLine("Задание №8:\nВведите трехзначное число, которое Вы бы хотели изменить:");
+            uint valueToReverse = uint.Parse(Console.ReadLine());
+            uint newValue = ((valueToReverse % 10) * 100) + (valueToReverse / 10);
+            Console.WriteLine($"Результат выполнения программы: {newValue}\n");
         }
         static void BasketPrice() {
-            double candiesPrice = 56,
-                 cookiesPrice = 76,
-                 applesPrice = 92;
-            Console.WriteLine("Задание №8:\nСколько килограмм конфет, печенья и яблок Вы бы хотели приобрести?\n" +
-                $"Цена за килограмм: Конфеты - {candiesPrice}, Печенье - {cookiesPrice}, Яблоки - {applesPrice}");
+            Console.WriteLine("Задание №9:\nВведите цену Конфет, Печенья, Яблок за килограмм(Каждое значение с новой строки!): ");
+            double candiesPrice = double.Parse(Console.ReadLine()),
+                   cookiesPrice = double.Parse(Console.ReadLine()),
+                   applesPrice = double.Parse(Console.ReadLine());
+            Console.WriteLine("Сколько килограмм конфет, печенья и яблок Вы бы хотели приобрести?");
             double candiesWeight = double.Parse(Console.ReadLine()),
-                 cookiesWeight = double.Parse(Console.ReadLine()),
-                 applesWeight = double.Parse(Console.ReadLine());
+                   cookiesWeight = double.Parse(Console.ReadLine()),
+                   applesWeight = double.Parse(Console.ReadLine());
             Console.WriteLine("Итоговая сумма корзины будет составлять: " +
                 $"{(candiesPrice * candiesWeight) + (cookiesPrice * cookiesWeight) + (applesPrice * applesWeight)}");
         }
